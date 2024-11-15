@@ -3,7 +3,7 @@ class Database {
     private $host = "localhost";
     private $db_name = "arboles";
     private $username = "root";
-    private $password = "";
+    private $password = "123456";
     public $conn;
 
     public function getConnection() {
@@ -14,6 +14,7 @@ class Database {
             $this->conn->exec("set names utf8");
         } catch(PDOException $exception) {
             echo "Connection error: " . $exception->getMessage();
+            die(); 
         }
 
         return $this->conn;
